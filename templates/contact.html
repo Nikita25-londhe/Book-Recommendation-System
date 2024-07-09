@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    nav{
+        background-color: white;
+        padding:  0;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+.logo{
+    width:350px;
+
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin:10px 15px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+/* @import url('https://fonts.googleapis.com/
+    css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap'); */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+.contact{
+position: relative;
+min-height: 100vh;
+padding: 50px 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background: url(/static/contact.jpg);
+background-size: cover;
+}
+.contact .content {
+    max-width: 800px;
+    text-align:center;
+}
+.contact .content h2
+{
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+.contact .content p
+{
+font-weight: 300;
+color: #fff;
+}
+.container
+{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 30px;
+}
+.container .contactInfo
+{  
+width: 50%;
+display: flex;
+flex-direction: column;
+}
+.container .contactInfo .box
+{
+position: relative;
+padding: 20px 0;
+display: flex;
+}
+.container .contactInfo .box .icon
+{
+min-width: 60px;
+height: 60px;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+font-size: 22px;
+}
+.container .contactInfo .box .text
+{
+display: flex;
+margin-Left: 20px;
+font-size: 16px;
+color: #fff;
+flex-direction: column;
+font-weight: 300;
+}
+.container .contactInfo .box .text h3
+{
+font-weight: 500;
+color:#c430d7;
+}
+.contactForm{
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+}
+.contactForm h2
+{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+} 
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+.contactForm .inputBox span
+{
+position: absolute;
+left: 0;
+padding: 5px 0;
+font-size: 16px;
+margin: 10px 0;
+pointer-events: none;
+transition: 0.5s;
+color: #666;
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span{
+    color: #e91e63;
+font-size: 12px;
+transform: translateY(-20px);
+}
+.contactForm .inputBox input[type="submit"]
+{
+    width: 100px;
+    background: linear-gradient(45deg,#df4881,#c430d7);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius:30px;
+} 
+@media (max-width: 991px)
+{
+.contact
+{
+padding: 50px;
+}
+.container{
+flex-direction: column;
+}
+.container .contactInfo
+{
+    margin-bottom: 40px;
+}
+.container .contactInfo,
+.contactForm{
+    width: 100%;
+}
+}
+
+</style>
+<body>
+    <div class="hero">
+    <nav class="navbar" style="background-color:white">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" class="logo">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Top">Top 50 BOOKs</a></li>
+            <li><a href="/Fiction">Fiction Books</a></li>
+            <li><a href="/Engg">Enginnering books</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Survey No. 27, Near Trimurti Chowk,<br>Dhankawadi, Pune-411043,<br>Maharashtra (India)</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>9112174173</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>sakshihiremath97@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form id="contactForm">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="fullName"  required>
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" required>
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea  name="message"
+                        required ></textarea>
+                        <span>How can We help you?</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Send" >    
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const nameInput = document.querySelector('input[name="fullName"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const messageInput = document.querySelector('textarea[name="message"]');
+
+    const serviceID = 'service_xxyg6dc'; 
+    const templateID = 'template_1avdcxh'; 
+    const publicKey = 'k7pkgN6YzDTsfuqE0'; 
+
+    emailjs.init(publicKey);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const inputData = {
+            from_name: nameInput.value,
+            user_email: emailInput.value,
+            message: messageInput.value
+        };
+
+        emailjs.send(serviceID, templateID, inputData)
+            .then(function(response) {
+                console.log('Success!', response.status, response.text);
+                alert('Your message has been sent successfully!');
+                form.reset();
+            }, function(error) {
+                console.log('Error:', error);
+                alert('Oops! Something went wrong. Please try again later.');
+            });
+    });
+});
+</script>
+</body>
+</html>

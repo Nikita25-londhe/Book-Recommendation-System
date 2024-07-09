@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        background: url("/static/eng.jpg");
+        background-size: cover;
+    }
+    .text-green{
+        color:#c9a330;
+    }
+    .text-black{
+        color:black
+    }
+    nav{
+        background-color: white;
+        padding:  0;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        width:350px;
+    
+    }
+    nav ul li{
+        display: inline-block;
+        list-style: none;
+        margin:10px 15px;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-weight: 400;
+    }
+    #con
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .text-red{
+        color:white;
+        font-weight:bold;
+        font-size:20px;
+        border:none;
+        padding:10px;
+    }
+    .btn-lg{
+        color:white;
+        background:#c9a330;
+    }
+    .form-control{
+        margin:40px 0px;
+    }
+
+</style>
+<body>
+
+    <nav class="navbar" style="background-color:white">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" class="logo">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Top">Top 50 BOOKs</a></li>
+            <li><a href="/Fiction">Fiction Books</a></li>
+            <li><a href="/Engg">Enginnering books</a></li>
+            <li><a href="/cont">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+                <h1 class="text-green" style="font-size:50px ">Content Base Recommendation</h1>
+                <form action="/eng_books" method="post">
+                    <input name="user_input" type="text" class="form-control"><br>
+                    <input type="submit" class ="btn-lg">
+                </form>
+            <div id="con">
+            {% if data %}
+            {%for i in data%}
+                    <p class="text-red"> - {{i[0]}}</p>
+    
+            {% endfor %}
+            {% endif %}  
+            </div>
+    </div>
+    
+</body>
+</html>
